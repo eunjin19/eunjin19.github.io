@@ -91,10 +91,25 @@ body {
 }
 
 .navbar .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 1rem 20px;
+}
+
+.navbar-inner {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+}
+
+.navbar-brand {
+  justify-self: start;
+}
+
+.navbar-settings {
+  justify-self: end;
+}
+
+.settings-link {
+  font-size: 1.2rem;
 }
 
 .logo {
