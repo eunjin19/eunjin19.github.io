@@ -20,10 +20,6 @@
   --border-color: rgba(255, 255, 255, 0.5);
   --shadow: 0 8px 32px rgba(2, 51, 115, 0.15);
   --transition: all 0.3s ease;
-  --page-gradient: radial-gradient(circle at 15% 10%, #e4eefa 0%, transparent 45%),
-    radial-gradient(circle at 85% 0%, var(--blue-lightest) 0%, transparent 35%),
-    radial-gradient(circle at 50% 100%, var(--blue-light) 0%, transparent 60%),
-    linear-gradient(135deg, #dce9f8 0%, var(--blue-lightest) 50%, var(--blue-light) 100%);
 }
 
 /* Reset & Base */
@@ -40,8 +36,7 @@ html {
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
   color: var(--text-color);
-  background: var(--page-gradient);
-  background-attachment: fixed;
+  background: var(--bg-color);
   line-height: 1.6;
   transition: var(--transition);
   min-height: 100vh;
@@ -126,31 +121,36 @@ body {
 
 .nav-menu {
   display: flex;
-  align-items: center;
-  justify-content: center;
   list-style: none;
-  gap: 0.5rem;
-  padding: 6px;
-  border-radius: 24px;
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
+  gap: 2rem;
 }
 
 .nav-link {
-  display: inline-block;
   color: var(--text-color);
   text-decoration: none;
   font-weight: 500;
-  padding: 8px 18px;
-  border-radius: 20px;
   transition: var(--transition);
   position: relative;
 }
 
 .nav-link:hover,
 .nav-link:active {
+  color: var(--secondary-color);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
   background-color: var(--secondary-color);
-  color: #ffffff;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
 }
 
 @media (max-width: 768px) {
