@@ -1,5 +1,5 @@
 // Smooth scroll offset for fixed navbar
-const NAVBAR_HEIGHT = 80;
+const NAVBAR_HEIGHT = 64;
 
 // Typing Animation
 function initTypingAnimation() {
